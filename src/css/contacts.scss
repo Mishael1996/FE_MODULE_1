@@ -105,6 +105,9 @@ $hoverBackground: #7e5c88;
     color: $tweetLink;
     padding: 5px;
     border-bottom: 1px solid $greyBorder;
+    &:hover {
+      color: $tweetLink;
+    }
     .img-wrapper {
       margin-right: 5px;
       display: flex;

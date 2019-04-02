@@ -8,48 +8,58 @@ function isActive (currentId) {
 }
 
 //slider
-let slider = document.getElementsByClassName('slides');
 const slides = document.getElementsByClassName('slide');
-let activeElement = document.querySelector('.current');
-for(let i = 0; i < slides.length; i++) {
+const lastSlide = slides.length - 1;
+
+let isSliding = false;
+let oldSlide = lastSlide;
+let currentSlide = 0;
+
+//slides position
+for (let i = 0; i < lastSlide;i++) {
     slides[i].style.zIndex = slides.length - i;
 }
-
-
-function next() {
-    console.log(slides);
-    if (activeElement.nextElementSibling) {
-        console.log(activeElement.nextElementSibling);
-        activeElement.style.left = "-100%";
-        activeElement.classList.remove('current');
-        activeElement.nextElementSibling.classList.add('current');
-        activeElement =  activeElement.nextElementSibling;
+function nextSlide () {
+    if (isSliding) return;
+    oldSlide = currentSlide;
+    currentSlide++;
+    if (currentSlide > lastSlide) {
+        currentSlide = 0;
     }
-        // else {
-    //     activeElement.classList.remove('current');
-    //     activeElement =  slides[0];
-    //     activeElement.classList.add('current');
-    // }
+    switchSlide (oldSlide, currentSlide, 'next')
 }
-function prev() {
-    if (activeElement.previousElementSibling) {
-        activeElement.previousElementSibling.style.left = "0%";
-        activeElement.classList.remove('current');
-        activeElement.previousElementSibling.classList.add('current');
-        activeElement = activeElement.previousElementSibling;
+
+function prevSlide () {
+    if (isSliding) return;
+    oldSlide = currentSlide;
+    currentSlide--;
+    if (currentSlide < 0) {
+        currentSlide = lastSlide;
+    }
+    switchSlide (oldSlide, currentSlide, 'prev')
+}
+function switchSlide (oldIndex, newIndex, type) {
+    isSliding = true;
+    if (type === 'next') {
+        slides[newIndex].style.display = "block";
+        slides[oldIndex].style.left = '-100%';
+        setTimeout(() => {
+            slides[oldIndex].style.left = '0';
+            slides[oldIndex].style.display = "none";
+            isSliding = false;
+        },1000);
+    }
+    if (type === 'prev') {
+        slides[newIndex].style.display = "block";
+        slides[oldIndex].style.left = '100%';
+        setTimeout(() => {
+            slides[oldIndex].style.left = '0';
+            slides[oldIndex].style.display = "none";
+            isSliding = false;
+        },1000);
+        console.log(oldIndex, newIndex, type);
     }
 }
-//     else {
-//         activeElement.classList.remove('current');
-//         activeElement = slides[slides.length -1];
-//         activeElement.style.left = "0%";
-//         activeElement.classList.add('current');
-//         for(let i = 0; i < slides.length; i++) {
-//             slides[i].style.zIndex = slides.length - i;
-//         }
-//     }
-// }
-
 // activeElement.onmousedown = function () {
 //     const clickPosition = event.clientX;
 //     document.onmousemove = function () {
