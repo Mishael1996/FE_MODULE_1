@@ -1,5 +1,28 @@
-.wrapper{
-  .main {
-    color: green;
+$greyText: #333333;
+$greyBorder: #e6e6e6;
+$greyBottom: #e0e0e0;
+@font-face {
+  font-family: Georgia; /* Имя шрифта */
+  src: url(../fonts/georgia.ttf); /* Путь к файлу со шрифтом */
+}
+
+a {
+  text-decoration: none;
+}
+
+.top-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 20px;
+  font-family: Georgia;
+  font-size: 16px;
+  color: $greyText;
+  line-height: 2.5em;
+  border-bottom: 1px solid $greyBorder;
+}
+
+.bottom-border {
+  img {
+    width: 100%;
   }
 }

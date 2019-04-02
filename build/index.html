@@ -5,13 +5,206 @@
     <title>Gulp Start</title>
     <link rel="stylesheet" href="./../css/styles.css">
     <link rel="stylesheet" href="./../css/style.scss">
+    <link rel="stylesheet" href="./../css/slider.scss">
+    <link rel="stylesheet" href="./../css/latestWorks.scss">
+    <link rel="stylesheet" href="./../css/blog.scss">
+    <link rel="stylesheet" href="./../css/contacts.scss">
 </head>
 <body>
+    <header>
+        <section>
+            <div class="header-wrapper">
+                <div class="logo">
+                    <div class="top-line-logo"><a href="#">Splendorous</a></div>
+                    <div class="bottom-line-logo">Free PSD Website Template</div>
+                </div>
+                <nav>
+                    <div class="nav-wrapper">
+                        <ul>
+                            <li class="active" onclick="isActive(this.id)" id="nav-1"><a href="#">HOME</a></li>
+                            <li onclick="isActive(this.id)" id="nav-2"><a href="#">STYLE DEMO</a></li>
+                            <li onclick="isActive(this.id)" id="nav-3"><a href="#">FULL WIDTH</a></li>
+                            <li onclick="isActive(this.id)" id="nav-4"><a href="#">DROPDOWN</a></li>
+                            <li onclick="isActive(this.id)" id="nav-5"><a href="#">PORTFOLIO</a></li>
+                            <li onclick="isActive(this.id)" id="nav-6"><a href="#">GALLERY</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </header>
     <section>
-        <div class="wrapper">
-            <div class="main">Main</div>
+        <div class="slider-wrapper">
+            <div class="slides">
+                <div class="slide current" style="background-color: #96739f">Slide 1</div>
+                <div class="slide" style="background-color: aqua">Slide 2</div>
+                <div class="slide" style="background-color: chartreuse">Slide 3</div>
+            </div>
+            <a class="prev" onclick="prev()"><img src="../img/left-arrow.png" alt="left-arrow"></a>
+            <a class="next" onclick="next()"><img src="../img/right-arrow.png" alt="right-arrow"></a>
         </div>
     </section>
+    <section>
+        <div class="top-line">Latest Project Work</div>
+        <div class="latest-work-wrapper">
+            <a href="#" class="link">
+                <div class="projects-wrapper">
+                    <div class="project-title">
+                        Project Title Here
+                    </div>
+                    <div class="project-body">
+                        <img src="../img/225.png" alt="225px">
+                    </div>
+                    <div class="project-footer">
+                        Short Descriptive Text Here
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="link">
+                <div class="projects-wrapper">
+                    <div class="project-title">
+                        Project Title Here
+                    </div>
+                    <div class="project-body">
+                        <img src="../img/225.png" alt="225px">
+                    </div>
+                    <div class="project-footer">
+                        Short Descriptive Text Here
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="link">
+                <div class="projects-wrapper">
+                    <div class="project-title">
+                        Project Title Here
+                    </div>
+                    <div class="project-body">
+                        <img src="../img/225.png" alt="225px">
+                    </div>
+                    <div class="project-footer">
+                        Short Descriptive Text Here
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="link">
+                <div class="projects-wrapper">
+                    <div class="project-title">
+                        Project Title Here
+                    </div>
+                    <div class="project-body">
+                        <img src="../img/225.png" alt="225px">
+                    </div>
+                    <div class="project-footer">
+                        Short Descriptive Text Here
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section>
+        <div class="blog-aboutUs-wrapper">
+            <div class="blog">
+                <div class="top-line">From The Blog</div>
+                <div class="blog-wrapper">
+                    <div class="post-blog">
+                        <img src="../img/125.png" alt="125">
+                        <div class="title">Post Title Here</div>
+                        <div class="date">Monday 21st January</div>
+                        <div class="content">Vestassapede et donec ut est liberos sus et eget sed eget. Quisqueta habitur augue magnisl magna phasellus sagittitor ant curabiturpis.</div>
+                    </div>
+                    <div class="post-blog">
+                        <img src="../img/125.png" alt="125">
+                        <div class="title">Post Title Here</div>
+                        <div class="date">Monday 21st January</div>
+                        <div class="content">Vestassapede et donec ut est liberos sus et eget sed eget. Quisqueta habitur augue magnisl magna phasellus sagittitor ant curabiturpis.</div>
+                    </div>
+                    <div class="post-blog">
+                        <img src="../img/125.png" alt="125">
+                        <div class="title">Post Title Here</div>
+                        <div class="date">Monday 21st January</div>
+                        <div class="content">Vestassapede et donec ut est liberos sus et eget sed eget. Quisqueta habitur augue magnisl magna phasellus sagittitor ant curabiturpis.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-us">
+                <div class="top-line">About Us</div>
+                <div class="about-us-wrapper">
+                    <div class="about-us-item">
+                        <img class="img-box" src="../img/60.png" alt="60">
+                        <div class="left-side">
+                            <div class="title">Name Goes Here</div>
+                            <div class="content">Temper inte interdum sem pus odio urna eget.</div>
+                            <a href="#"><div class="view-profile">View Profile »</div></a>
+                        </div>
+                    </div>
+                    <div class="about-us-item">
+                        <img class="img-box" src="../img/60.png" alt="60">
+                        <div class="left-side">
+                            <div class="title">Name Goes Here</div>
+                            <div class="content">Temper inte interdum sem pus odio urna eget.</div>
+                            <a href="#"><div class="view-profile">View Profile »</div></a>
+                        </div>
+                    </div>
+                    <div class="about-us-item">
+                        <img class="img-box" src="../img/60.png" alt="60">
+                        <div class="left-side">
+                            <div class="title">Name Goes Here</div>
+                            <div class="content">Temper inte interdum sem pus odio urna eget.</div>
+                            <a href="#"><div class="view-profile">View Profile »</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-border">
+            <img src="../img/border-bottom.png" alt="border">
+        </div>
+    </section>
+    <section>
+        <div class="contacts-wrapper">
+            <div class="tweets-wrapper">
+                <div class="title">LATEST TWEETS</div>
+                <div class="tweets-title">Post Title</div>
+                <div class="last-posted-date">Posted by Admin on 00.00.0000</div>
+                <div class="content">Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede estibulum nulla orna nisl velit elit ac aliquat non tincidunt. Namjusto cras urna urnaretra lor urna neque sed quis orci nulla. Laoremut vitae doloreet.</div>
+                <a href="#"><div class="link">Read More »</div></a>
+            </div>
+            <div class="links-wrapper">
+                <div class="title">QUICK LINKS</div>
+                <a href="#"><div class="link">Link Text Here</div></a>
+                <a href="#"><div class="link">Link Text Here</div></a>
+                <a href="#"><div class="link">Link Text Here</div></a>
+                <a href="#"><div class="link">Link Text Here</div></a>
+                <a href="#"><div class="link">Link Text Here</div></a>
+                <a href="#"><div class="link">Link Text Here</div></a>
+            </div>
+            <div class="contact">
+                <div class="title">CONTACT US</div>
+                <div class="content">Company Name Street Name & Number Town Postcode/Zip</div>
+                <div class="phone-number">Tel: <br>xxxxx xxxxxxxxxx</div>
+                <div class="fax">Fax: <br>xxxxx xxxxxxxxxx</div>
+                <div class="email">Email: <br>contact@mydomain.com</div>
+            </div>
+            <div class="socialize">
+                <div class="title">SOCIALISE</div>
+                <a href="#" class="services"><div class="img-wrapper"><img src="../img/linkedin.png" alt="linkedin"></div>LinkedIn</a>
+                <a href="#" class="services"><div class="img-wrapper"><img src="../img/twitter.png" alt="twitter"></div>Twitter</a>
+                <a href="#" class="services"><div class="img-wrapper"><img src="../img/pinterest.png" alt="pinterest"></div>Pinterest</a>
+                <a href="#" class="services"><div class="img-wrapper"><img src="../img/rss.png" alt="rss"></div>RSS Feed</a>
+            </div>
+        </div>
+        <div class="bottom-border">
+            <img src="../img/border-bottom.png" alt="border">
+        </div>
+    </section>
+    <footer>
+        <section>
+            <div class="footer-wrapper">
+                <div class="copyright">Copyright © 2013 Domain Name - All Rights Reserved</div>
+                <div class="creator">Template by OS Templates</div>
+            </div>
+        </section>
+    </footer>
 <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>

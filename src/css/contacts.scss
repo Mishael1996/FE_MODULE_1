@@ -1,0 +1,125 @@
+$greyText: #979797;
+$tweetLink: #7e5b87;
+$quickLinks: #7e5c88;
+$greyBorder: #e0e0e0;
+$iconBackground: #c3c3c3;
+$hoverBackground: #7e5c88;
+
+.contacts-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  .title {
+    margin: 40px 0;
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: bold;
+    color: $greyText;
+  }
+  .tweets-wrapper {
+    width: 221px;
+    margin-left: 20px;
+    .tweets-title {
+      font-family: Georgia;
+      font-size: 13px;
+      font-weight: bold;
+      color: $greyText;
+      margin-bottom: 2px;
+    }
+    .last-posted-date {
+      margin: 8px 0;
+      font-family: Georgia;
+      font-size: 11px;
+      font-weight: 400;
+      color: $greyText;
+    }
+    .content {
+      font-family: Georgia;
+      font-size: 12px;
+      font-weight: 400;
+      color: $greyText;
+      margin-bottom: 20px;
+    }
+    .link {
+      display: flex;
+      justify-content: flex-end;
+      font-family: Georgia;
+      font-size: 12px;
+      font-weight: 400;
+      color: $tweetLink;
+    }
+  }
+}
+
+.links-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 225px;
+  .link {
+    margin: 7px;
+    color: $quickLinks;
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: 400;
+    border-bottom: 1px solid $greyBorder;
+  }
+}
+
+.contact {
+  width: 150px;
+  .content {
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: 400;
+    color: $greyText;
+    margin-bottom: 10px;
+  }
+  .phone-number {
+    font-size: 12px;
+    font-weight: 400;
+    color: $greyText;
+    margin-bottom: 10px;
+  }
+  .fax {
+    font-size: 12px;
+    font-weight: 400;
+    color: $greyText;
+    margin-bottom: 10px;
+  }
+  .email {
+    font-size: 12px;
+    font-weight: 400;
+    color: $greyText;
+  }
+}
+
+.socialize {
+  width: 210px;
+  .services {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: 400;
+    color: $tweetLink;
+    padding: 5px;
+    border-bottom: 1px solid $greyBorder;
+    .img-wrapper {
+      margin-right: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      background-color: $iconBackground;
+      &:hover {
+        background: $hoverBackground;
+      }
+    }
+  }
+}
+.bottom-border {
+  margin-top: 50px;
+}

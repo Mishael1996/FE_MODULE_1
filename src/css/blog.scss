@@ -1,0 +1,90 @@
+$purpleTitle: #7e5c88;
+$greyText: #979797;
+$borderColor: #d8d8d8;
+.blog-aboutUs-wrapper {
+  margin: 50px 0;
+  display: flex;
+  .blog {
+    flex: 3;
+    .blog-wrapper {
+      display: flex;
+      justify-content: space-around;
+      .post-blog {
+        display: flex;
+        flex-direction: column;
+        width: 225px;
+        margin: 0 10px;
+        .title {
+          margin-top: 20px;
+          color: $purpleTitle;
+          font-family: Georgia;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .date {
+          font-family: Georgia;
+          margin: 8px 0;
+          font-size: 11px;
+          font-weight: 400;
+          color: $greyText;
+        }
+        .content {
+          font-family: Georgia;
+          font-size: 12px;
+          font-weight: 400;
+          color: $greyText;
+        }
+      }
+    }
+  }
+  .about-us {
+    flex: 1;
+    .about-us-wrapper {
+      display: flex;
+      flex-direction: column;
+      .about-us-item {
+        display: flex;
+        border-bottom: 1px solid $borderColor;
+        margin: 4px 20px 5px;
+        &:first-child{
+          margin-top: 0;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+        .img-box {
+          margin-bottom: 10px;
+          margin-left: 12px;
+          top: 5px;
+          width: 59px;
+          height: 59px;
+          padding: 4px;
+          border: 1px solid $borderColor;
+        }
+        .left-side {
+          margin-left: 12px;
+          .title {
+            color: $greyText;
+            font-family: Georgia;
+            font-size: 12px;
+            font-weight: bold;
+          }
+          .content {
+            color: $greyText;
+            font-family: Georgia;
+            font-size: 12px;
+            font-weight: 400;
+          }
+          .view-profile {
+            margin: 2px 0 10px;
+            font-family: Georgia;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14.4px;
+            color: $purpleTitle;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+$greyText: #979797;
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $greyText;
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 40px;
+  }
+  .creator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: 400;
+    color: $greyText;
+    margin-right: 40px;
+  }
+}
