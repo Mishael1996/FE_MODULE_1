@@ -10,17 +10,19 @@ function isActive (currentId) {
 //slider
 const slides = document.getElementsByClassName('slide');
 const lastSlide = slides.length - 1;
+const switchSlideTime = 1000;
 
 let isSliding = false;
 let oldSlide = lastSlide;
 let currentSlide = 0;
 
-//slides position
+// slides start position
 for (let i = 0; i < lastSlide;i++) {
     slides[i].style.zIndex = slides.length - i;
 }
+
 function nextSlide () {
-    if (isSliding) return;
+    if (isSliding || slides.length < 2) return;
     oldSlide = currentSlide;
     currentSlide++;
     if (currentSlide > lastSlide) {
@@ -30,7 +32,7 @@ function nextSlide () {
 }
 
 function prevSlide () {
-    if (isSliding) return;
+    if (isSliding || slides.length < 2) return;
     oldSlide = currentSlide;
     currentSlide--;
     if (currentSlide < 0) {
@@ -38,16 +40,19 @@ function prevSlide () {
     }
     switchSlide (oldSlide, currentSlide, 'prev')
 }
+
 function switchSlide (oldIndex, newIndex, type) {
     isSliding = true;
+    slides[newIndex].style.zIndex = lastSlide;
+    slides[oldIndex].style.zIndex = lastSlide + 1;
     if (type === 'next') {
         slides[newIndex].style.display = "block";
         slides[oldIndex].style.left = '-100%';
         setTimeout(() => {
-            slides[oldIndex].style.left = '0';
             slides[oldIndex].style.display = "none";
+            slides[oldIndex].style.left = '0';
             isSliding = false;
-        },1000);
+        }, switchSlideTime);
     }
     if (type === 'prev') {
         slides[newIndex].style.display = "block";
@@ -56,8 +61,7 @@ function switchSlide (oldIndex, newIndex, type) {
             slides[oldIndex].style.left = '0';
             slides[oldIndex].style.display = "none";
             isSliding = false;
-        },1000);
-        console.log(oldIndex, newIndex, type);
+        }, switchSlideTime);
     }
 }
 // activeElement.onmousedown = function () {

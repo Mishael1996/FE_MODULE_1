@@ -1,5 +1,16 @@
+$arrowEdgeDistance: 20px;
+$contentEdgeDistance: 80px;
+$greyText: #979797;
+$buttonBackgroundColor: #7e5c88;
+h1 {
+  font-family: Georgia;
+  font-size: 46px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
 .slider-wrapper {
-  border:1px solid grey;
+  overflow-x: hidden;
   position: relative;
   height: 500px;
   margin-top: 50px;
@@ -9,25 +20,113 @@
     height: 100%;
     transition: left 1s ease-out;
     left: 0;
+    .slide-wrapper {
+      height: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      .information-wrapper {
+        position: absolute;
+        left: $contentEdgeDistance;
+        width: 315px;
+        display: flex;
+        flex-direction: column;
+        .content {
+          color: $greyText;
+          font-family: Georgia;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 19.2px;
+          margin-bottom: 16px;
+        }
+        button {
+          width: 142px;
+          height: 35px;
+          font-family: Georgia;
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 15.6px;
+          border-radius: 20px;
+          border: none;
+          color: white;
+          background-color: $buttonBackgroundColor;
+          transition: 300ms;
+          cursor: pointer;
+        }
+      }
+      .img-wrapper {
+        position: absolute;
+        right: $contentEdgeDistance;
+      }
+    }
   }
   .prev, .next {
-    top: 50%;
     position: absolute;
-    z-index: 1;
+    cursor: pointer;
+    z-index: 1000;
+    top: 50%;
     width: 25px;
     height: 63px;
     transition: 0.6s ease;
   }
   .prev {
-    z-index: 1000;
-    left: 120px;
+    left: $arrowEdgeDistance;
   }
   .next {
-    z-index: 1000;
-    right: 120px;
+    right: $arrowEdgeDistance;
   }
   .prev:active,
   .next:active {
-    transform: scale(.8);
+    transform: scale(.7);
+  }
+}
+.bottom-border {
+  margin-top: -8px;
+}
+
+@media (min-width: 1250px) {
+  .slider-wrapper {
+    .slide {
+      .slide-wrapper {
+        .information-wrapper {
+          left: 12%;
+          h1 {
+            font-size: 50px;
+          }
+          .content {
+            font-size: 14px;
+            width: 500px
+          }
+          button {
+            font-size: 15px;
+          }
+        }
+        .img-wrapper {
+          right: 172px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .slider-wrapper {
+    .slide {
+      .slide-wrapper {
+        .information-wrapper {
+          left: 15%;
+          .content {
+            font-size: 16px;
+          }
+          button {
+            width: 180px;
+            font-size: 17px;
+          }
+        }
+        .img-wrapper {
+          right: 220px;
+        }
+      }
+    }
   }
 }
